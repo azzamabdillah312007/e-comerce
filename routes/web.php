@@ -21,6 +21,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/my-shop', [ShopController::class, 'index'])->middleware('auth')->name('my-shop');
 Route::get('/my-shop/add-product', [ShopController::class, 'showAddProduct'])->middleware('auth')->name('my-shop.add-product');
 Route::post('/my-shop/add-product', [ShopController::class, 'addProduct'])->middleware('auth')->name('my-shop.add-product');
+Route::get('/contact' , [ShopController::class , 'showContact'])->middleware('auth')->name('contact');
+Route::get('/about' , [ShopController::class , 'showAbout'])->middleware('auth')->name('about');
+
 
 
 require __DIR__ . '/auth.php';

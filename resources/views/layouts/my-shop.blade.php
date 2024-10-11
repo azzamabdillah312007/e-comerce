@@ -29,11 +29,7 @@
                             {{ __('Belanja yuk!!') }}
                         </h2>
                         <ul class="flex space-x-6">
-                            <li><a href="/dashboard" class="text-gray-600 hover:text-indigo-600">Home</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-indigo-600">Shop</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-indigo-600">Categories</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-indigo-600">About</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-indigo-600">Contact</a></li>
+                            <li><a href="/dashboard" class="text-gray-600 hover:text-indigo-600">Dashboard</a></li>                       
                         </ul>
                     </div>
                 </div>

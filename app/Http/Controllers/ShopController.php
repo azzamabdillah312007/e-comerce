@@ -60,4 +60,12 @@ class ShopController extends Controller
 
         return redirect()->route('my-shop');
     }
+
+    public function showContact(){
+        return view('contact.contact');
+    }
+
+    public function showAbout(){
+        return view('about.about');
+    }
 }
