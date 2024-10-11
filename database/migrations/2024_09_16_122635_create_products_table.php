@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('brand');
             $table->string('color');
             $table->string('size');
+            $table->string('location');
             $table->string('category');
             $table->decimal('price', 10, 2);
             $table->integer('quantity');

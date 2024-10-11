@@ -14,6 +14,7 @@ class Product extends Model
         'brand',
         'color',
         'size',
+        'location',
         'description',
         'price',
         'quantity',

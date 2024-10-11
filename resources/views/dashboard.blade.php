@@ -18,7 +18,8 @@
         class="w-full h-max bg-gradient-to-r from-indigo-500 to-indigo-700 p-10 flex flex-col items-center justify-center">
         <h2 class="text-white text-5xl font-extrabold text-center mb-4">Selamat datang di belanja Yuk!!</h2>
         <p class="text-white text-lg text-center mb-6 max-w-2xl">
-            Beli produk produk terbaik di e-comerce ini dengan kualitas tinggi dan harga terjangkau , harga murah tapi kualitas ga murahan .
+            Beli produk produk terbaik di e-comerce ini dengan kualitas tinggi dan harga terjangkau , harga murah tapi
+            kualitas ga murahan .
         </p>
         <div class="relative">
             <img src="{{ asset('images/dashboard.png') }}" alt="Shopping Cart"
@@ -32,10 +33,18 @@
             <h2 class="text-2xl font-bold text-center mb-8">Shop by Categories</h2>
             <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4">
                 @foreach ($products as $product)
-                    <div class="bg-white p-6 border">
+                    <div class="bg-white p-6 border-e border-b">
                         <img src="{{ asset('product_images/' . $product->image) }}" alt="Category 1"
                             class="w-full h-40 object-cover mb-4">
-                        <h3 class="text-xl font-semibold text-gray-700">{{ $product->name }}</h3>
+                        <h3 class="text-lg font-semibold text-gray-700">{{ $product->name }}</h3>
+                        {{-- <div class="flex justify-between"> --}}
+                        <h3 class=" text-base  text-gray-700">{{ $product->brand }}</h3>
+                        <h3 class=" text-base font-medium text-indigo-600">Rp.{{ $product->price }}.000</h3>
+                        {{-- </div> --}}
+                        <h3 class=" text-base  text-gray-700">{{ $product->location }}</h3>
+                        <button type="button"
+                            class="w-full py-2.5 px-5 my-2 text-sm font-medium text-white focus:outline-none bg-indigo-600 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Beli Sekarang</button>
+
                     </div>
                 @endforeach
                 {{-- <div class="bg-white p-6 rounded-lg shadow-lg">

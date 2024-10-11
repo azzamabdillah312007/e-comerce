@@ -16,32 +16,42 @@
                             produk</label>
                         <input type="text" name="name" id="name_product"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Baju" required="">
+                            placeholder="Nama produk">
+                        @error('name')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
-                    @error('name')
-                        <span class="text-red-600 text-sm">{{ $message }}</span>
-                    @enderror
-                    <div class="w-full">
+                    <div class="sm:col-span-2">
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lokasi
+                        </label>
+                        <input type="text" name="location" id="location"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Kecamatan , provinsi">
+                        @error('location')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="sm:col-span-2">
                         <label for="brand"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
                         <input type="text" name="brand" id="brand"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Adidas" required="">
+                            placeholder="Adidas">
+                        @error('brand')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
-                    @error('brand')
-                        <span class="text-red-600 text-sm">{{ $message }}</span>
-                    @enderror
-                    <div class="w-full">
+                    <div class="sm:col-span-2">
                         <label for="color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Warna
                             produk</label>
                         <input type="text" name="color" id="color"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Biru laut" required="">
+                            placeholder="Biru laut">
+                        @error('color')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
-                    @error('color')
-                        <span class="text-red-600 text-sm">{{ $message }}</span>
-                    @enderror
-                    <div>
+                    <div class="sm:col-span-2">
                         <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori
                             produk</label>
                         <select id="category" name="category"
@@ -51,36 +61,36 @@
                             <option value="Elektronik">Elektronik</option>
                             <option value="Rumah tangga">Rumah tangga</option>
                         </select>
+                        @error('category')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
-                    @error('category')
-                        <span class="text-red-600 text-sm">{{ $message }}</span>
-                    @enderror
-                    <div class="w-full">
+                    <div class="sm:col-span-2">
                         <label for="quantity"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Stok</label>
                         <input type="text" name="quantity" id="quantity"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="234" required="">
+                            placeholder="234">
+                        @error('quantity')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
-                    @error('quantity')
-                        <span class="text-red-600 text-sm">{{ $message }}</span>
-                    @enderror
-                    <div class="w-full">
+                    <div class="sm:col-span-2">
                         <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Harga</label>
                         <input type="text" name="price" id="price"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="90" required="">
+                            placeholder="90">
+                        @error('price')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
-                    @error('price')
-                        <span class="text-red-600 text-sm">{{ $message }}</span>
-                    @enderror
-                    <div class="w-full">
+                    <div class="sm:col-span-2">
                         <label for="size" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ukuran
                             (opsional)</label>
                         <input type="text" name="size" id="size"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="M , L , XL" required="">
+                            placeholder="M , L , XL">
                     </div>
                     <div class="sm:col-span-2">
                         <label for="description"
@@ -88,20 +98,20 @@
                         <textarea name="description" id="description" rows="8"
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Your description here"></textarea>
+                        @error('description')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
-                    @error('description')
-                        <span class="text-red-600 text-sm">{{ $message }}</span>
-                    @enderror
                     <div class="sm:col-span-2">
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload
                             file</label>
                         <input
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                             name="image" id="file_input" type="file">
+                        @error('image')
+                            <span class="text-red-600 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
-                    @error('image')
-                        <span class="text-red-600 text-sm">{{ $message }}</span>
-                    @enderror
 
                 </div>
                 <button type="submit"
