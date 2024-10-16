@@ -23,7 +23,9 @@ Route::get('/my-shop/add-product', [ShopController::class, 'showAddProduct'])->m
 Route::post('/my-shop/add-product', [ShopController::class, 'addProduct'])->middleware('auth')->name('my-shop.add-product');
 Route::get('/contact' , [ShopController::class , 'showContact'])->middleware('auth')->name('contact');
 Route::get('/about' , [ShopController::class , 'showAbout'])->middleware('auth')->name('about');
-
+Route::get('/dashboard/{id}/detail' , [ShopController::class, 'detailProduct'])->middleware('auth');
+Route::get('/my-shop/{id}/edit-product', [ShopController::class, 'showEditProduct'])->middleware('auth')->name('my-shop.edit-product');
+Route::put('/my-shop/{id}/edit-product}',[ShopController::class, 'editProduct'])->name('my-shop.update-product');
 
 
 require __DIR__ . '/auth.php';

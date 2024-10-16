@@ -42,8 +42,16 @@
                         <h3 class=" text-base font-medium text-indigo-600">Rp.{{ $product->price }}.000</h3>
                         {{-- </div> --}}
                         <h3 class=" text-base  text-gray-700">{{ $product->location }}</h3>
-                        <button type="button"
-                            class="w-full py-2.5 px-5 my-2 text-sm font-medium text-white focus:outline-none bg-indigo-600 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Beli Sekarang</button>
+                        <div class="flex">
+                            <button type="button"
+                                class="w-[80%] py-2.5 px-5 my-2 text-sm font-medium text-white focus:outline-none bg-indigo-600 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"><a
+                                    href="/dashboard/{{ $product->id }}/detail">Beli Sekarang</a></button>
+                            <button type="button"
+                                class="flex items-center justify-center w-[20%] py-2.5 px-5 my-2 text-sm font-medium text-black focus:outline-none bg-gray-200 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"><x-grommet-cart
+                                    class="w-4 h-4" />
+                            </button>
+                        </div>
+
 
                     </div>
                 @endforeach

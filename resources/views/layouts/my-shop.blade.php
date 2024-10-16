@@ -29,7 +29,8 @@
                             {{ __('Belanja yuk!!') }}
                         </h2>
                         <ul class="flex space-x-6">
-                            <li><a href="/dashboard" class="text-gray-600 hover:text-indigo-600">Dashboard</a></li>                       
+                            <li><a href="/dashboard" class="text-gray-600 hover:text-indigo-600">Dashboard</a></li>      
+                            <li><a href="{{ url()->previous() }}" class="text-gray-600 hover:text-indigo-600">Halaman sebelumnya</a></li>                                        
                         </ul>
                     </div>
                 </div>

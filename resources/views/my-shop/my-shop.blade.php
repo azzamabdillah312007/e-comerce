@@ -39,7 +39,7 @@
                         <p class="text-gray-700 mb-4">Deskripsi singkat tentang produk ini.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-indigo-600 font-bold">${{ $myProduct->price }}</span>
-                            <a href="#"
+                            <a href="/my-shop/{{ $myProduct->id }}/edit-product"
                                 class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600">Edit</a>
                         </div>
                     </div>

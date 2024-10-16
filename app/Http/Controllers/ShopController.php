@@ -5,12 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Polyfill\Intl\Idn\Idn;
 
 class ShopController extends Controller
 {
     public function index(){
         $products = Product::where('user_id', Auth::id())->get();
         return view('my-shop.my-shop', ['products' => $products]);
+    }
+
+    public function detailProduct($id){
+
+        $userProducts = Product::where('user_id' , Auth::id())->get();
+        $detailProduct = Product::findOrFail($id);
+
+        return view('shop.detail-product' , [
+            'userProducts' => $userProducts,
+            'product' => $detailProduct,
+        ]);
     }
 
     public function showAddProduct(){
@@ -62,6 +74,38 @@ class ShopController extends Controller
         ]);
 
         return redirect()->route('my-shop');
+    }
+
+    public function showEditProduct(string $id){
+
+        $product['product'] = Product::find($id);
+        return view('my-shop.edit-product', $product);
+    }
+
+    public function editProduct(Request $request , string $id){
+        $product = Product::find($id);
+
+        $validateData = $request->validate([
+            'name' =>  'required|string',
+            'brand' => 'required|string',
+            'color' => 'required|string',
+            'location' => 'required|string',
+            'category' => 'required|string',
+            'quantity' => 'required|numeric',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2098',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imagesName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('product_images'), $imagesName);
+            $validateData['image'] = $imagesName; //update dengan gambar yang baru
+        }
+
+        $product->update($validateData);
+        return redirect()->route('my-shop');
+
     }
 
     public function showContact(){
