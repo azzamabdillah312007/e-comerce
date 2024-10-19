@@ -26,7 +26,7 @@
                 <!-- Harga dan Tindakan -->
                 <div class="flex items-center justify-between mb-6">
                     <span class="text-2xl font-bold text-gray-900">
-                        Rp {{ number_format($product->price, 0, ',', '.') }}
+                        Rp.{{ number_format($product->price , '0' , '.') }}
                     </span>
 
                     <!-- Tombol Beli -->

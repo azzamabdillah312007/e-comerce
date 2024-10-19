@@ -33,14 +33,18 @@
 
                 @foreach ($products as $myProduct)
                     <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <img src="{{  asset('product_images/' . $myProduct->image) }}" alt="Product Image"
+                        <img src="{{ asset('product_images/' . $myProduct->image) }}" alt="Product Image"
                             class="w-full h-40 object-cover mb-4 rounded-md">
                         <h4 class="text-xl font-semibold mb-2">{{ $myProduct->name }}</h4>
                         <p class="text-gray-700 mb-4">Deskripsi singkat tentang produk ini.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-indigo-600 font-bold">${{ $myProduct->price }}</span>
-                            <a href="/my-shop/{{ $myProduct->id }}/edit-product"
-                                class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600">Edit</a>
+                            <div class="flex gap-3">
+                                <a href="/my-shop/{{ $myProduct->id }}/edit-product"
+                                    class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-gray-200 hover:text-black">Edit</a>
+                                <a href="/my-shop/{{ $myProduct->id }}/edit-product"
+                                    class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-gray-200  hover:text-black">Hapus</a>
+                            </div>
                         </div>
                     </div>
                 @endforeach

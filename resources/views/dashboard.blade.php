@@ -39,7 +39,7 @@
                         <h3 class="text-lg font-semibold text-gray-700">{{ $product->name }}</h3>
                         {{-- <div class="flex justify-between"> --}}
                         <h3 class=" text-base  text-gray-700">{{ $product->brand }}</h3>
-                        <h3 class=" text-base font-medium text-indigo-600">Rp.{{ $product->price }}.000</h3>
+                        <h3 class=" text-base font-medium text-indigo-600">Rp.{{ number_format($product->price , '0' , '.') }}</h3>
                         {{-- </div> --}}
                         <h3 class=" text-base  text-gray-700">{{ $product->location }}</h3>
                         <div class="flex">
